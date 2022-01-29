@@ -1,0 +1,527 @@
+@import "./base/mixins";
+@import "./base/variables";
+
+@media (max-width: 767px) {
+  body {
+    min-width: 320px;
+    .sect-title {
+      @include font-style(Montserrat, normal, bold, 22px, 27px, $black);
+    }
+    .d-flex-cntr {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    // HEADER
+    .header {
+      min-height: 540px;
+      background-image: url(../images/header-bg_mobile.png);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-color: #000000;
+      &__box {
+        margin: 0 auto;
+        min-width: 281px;
+        max-width: 500px;
+        &__up-part {
+          padding-top: 20px;
+          @extend .d-flex-cntr;
+          flex-flow: column-reverse wrap;
+          &__logo {
+            padding: 97px 4px 0 0;
+            .logo {
+              @include font-style(Montserrat, normal, bold, 20px, 24px, $white);
+              text-decoration: none;
+            }
+          }
+          &__btn-box {
+            padding-right: 22px;
+            display: flex;
+            button {
+              @include btn-size(90px, 36px, 40px, transparent);
+              box-sizing: border-box;
+              border: unset;
+            }
+            button:hover {
+              border: 2px solid $white;
+            }
+            .log-in {
+              @include font-style(
+                Montserrat,
+                normal,
+                normal,
+                14px,
+                17px,
+                $white
+              );
+            }
+            .sign-up {
+              margin-right: 4px;
+              @extend .log-in;
+            }
+          }
+        }
+        &__title-part {
+          padding-top: 26px;
+          @extend .d-flex-cntr;
+          flex-flow: column wrap;
+          &__title {
+            padding-right: 4px;
+            width: 280px;
+            @include font-style(Montserrat, normal, bold, 30px, 37px, $white);
+            text-align: center;
+            letter-spacing: 0.5px;
+          }
+          &__sub-title {
+            padding-top: 6px;
+            width: 280px;
+            @include font-style(Roboto, normal, 300, 18px, 24px, #f7f3f2);
+            text-align: center;
+            letter-spacing: -0.2px;
+          }
+          &__btn {
+            margin-top: 16px;
+            padding-right: 4px;
+            @include btn-size(280px, 40px, 40px, $red);
+            @extend .d-flex-cntr;
+            a {
+              @include font-style(Montserrat, normal, bold, 14px, 17px, $white);
+              text-decoration: none;
+              word-spacing: 3px;
+            }
+          }
+          &__btn:hover {
+            background-color: $white;
+            border: 2px solid $red;
+          }
+          &__btn:hover a {
+            color: $red;
+          }
+        }
+      }
+    }
+    // HEADER
+
+    // MAIN
+    //  h-works
+    .h-works {
+      height: 780px;
+      &__box {
+        @extend .header__box;
+        min-width: 300px;
+        max-width: 600px;
+        padding-top: 34px;
+        @extend .d-flex-cntr;
+        flex-flow: column wrap;
+        &__title {
+          @extend .sect-title;
+          letter-spacing: 0.6px;
+        }
+        &__content {
+          height: 755px;
+          padding: 15px 1px 0 0;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: space-between;
+          .item-1 {
+            background-image: url(../images/h-works_i-1_sm.png);
+          }
+          .item-2 {
+            background-image: url(../images/h-works_i-2_sm.png);
+          }
+          .item-3 {
+            background-image: url(../images/h-works_i-3_sm.png);
+          }
+          .item-1,
+          .item-2,
+          .item-3 {
+            width: 300px;
+            height: 240px;
+            padding: 63px 32px 17px 21px;
+            @extend .d-flex-cntr;
+            flex-flow: column wrap;
+            align-items: start;
+            justify-content: space-between;
+            border-radius: 4px;
+            box-shadow: inset 0 -34px 122px 0px black;
+            &__badge {
+              @include btn-size(70px, 20px, 40px, $red);
+              @include font-style(
+                Montserrat,
+                normal,
+                normal,
+                10px,
+                12px,
+                $white
+              );
+              letter-spacing: 2px;
+              @extend .d-flex-cntr;
+            }
+            div[title="step-2"] {
+              margin-top: 32px;
+            }
+            &__title {
+              padding: 22px 0 0 2px;
+              @include font-style(Montserrat, normal, bold, 24px, 14px, $white);
+            }
+            div[title="title-2"] {
+              margin: -17px 0 0 -2px;
+              letter-spacing: 0.7px;
+            }
+
+            &__desc {
+              @include font-style(Roboto, normal, 300, 14px, 14px, #e3e3e3);
+            }
+          }
+        }
+      }
+    }
+    //  h-works
+
+    // m-partner
+    .m-partner {
+      &__box {
+        @extend .header__box;
+        min-width: 300px;
+        max-width: 600px;
+        padding-top: 72px;
+        @extend .d-flex-cntr;
+        flex-flow: column wrap;
+        &__title {
+          width: 280px;
+          letter-spacing: 0.6px;
+          @extend .sect-title;
+          text-align: center;
+        }
+        &__content {
+          height: 936px;
+          padding: 13px 0 0;
+          display: flex;
+          flex-flow: column wrap;
+          position: relative;
+          .item-1 {
+            position: relative;
+            padding-bottom: 17px;
+          }
+          .item-1::after {
+            @include ava-icon(
+              url("../images/music.svg"),
+              absolute,
+              32px,
+              32px,
+              58px,
+              89px,
+              $red,
+              50%,
+              6px solid $white
+            );
+            @extend .d-flex-cntr;
+          }
+          .item-2 {
+            position: absolute;
+            bottom: 27.4%;
+          }
+          .item-2::after {
+            @include ava-icon(
+              url("../images/brush.svg"),
+              absolute,
+              32px,
+              32px,
+              58px,
+              89px,
+              #19d4ca,
+              50%,
+              6px solid $white
+            );
+            @extend .d-flex-cntr;
+          }
+          .item-3 {
+            position: relative;
+          }
+          .item-3::after {
+            @include ava-icon(
+              url("../images/camera.svg"),
+              absolute,
+              32px,
+              32px,
+              58px,
+              89px,
+              #ffa710,
+              50%,
+              6px solid $white
+            );
+            @extend .d-flex-cntr;
+          }
+          .item-4 {
+            position: absolute;
+            bottom: 3.7%;
+          }
+          .item-4::after {
+            @include ava-icon(
+              url("../images/plane.svg"),
+              absolute,
+              32px,
+              32px,
+              58px,
+              89px,
+              #667df3,
+              50%,
+              6px solid $white
+            );
+            @extend .d-flex-cntr;
+          }
+          .item-1,
+          .item-2,
+          .item-3,
+          .item-4 {
+            width: 238px;
+            @extend .d-flex-cntr;
+            flex-flow: column wrap;
+            &__avatar {
+              width: 120px;
+              height: 120px;
+              border-radius: 50%;
+            }
+            &__name {
+              padding-top: 19px;
+              @include font-style(Montserrat, normal, bold, 14px, 17px, $black);
+              letter-spacing: 0.5px;
+            }
+            &__desc {
+              padding-top: 21px;
+              @include font-style(Roboto, normal, 300, 14px, 14px, #666666);
+              text-align: center;
+            }
+            div[title="desc-3"] {
+              padding-top: 26px;
+            }
+          }
+        }
+        &__btn {
+          margin-top: 2px;
+          @include btn-size(280px, 40px, 40px, $white);
+          border: 2px solid $red;
+          @extend .d-flex-cntr;
+          a {
+            padding-left: 4px;
+            @include font-style(Montserrat, normal, bold, 14px, 17px, $red);
+            text-decoration: none;
+            letter-spacing: 0.3px;
+          }
+        }
+        &__btn:hover {
+          background-color: $red;
+          border: 2px solid $white;
+        }
+        &__btn:hover a {
+          color: $white;
+        }
+      }
+    }
+    // m-partner
+
+    // discover
+    .discover {
+      height: 1057px;
+      &__box {
+        @extend .header__box;
+        min-width: 300px;
+        max-width: 600px;
+        padding-top: 34px;
+        @extend .d-flex-cntr;
+        flex-flow: column wrap;
+        &__title {
+          width: 279px;
+          letter-spacing: 0.7px;
+          text-align: center;
+          @extend .sect-title;
+        }
+        &__content {
+          height: 933px;
+          padding: 33px 1px 0 0;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: space-between;
+          .item-1 {
+            background-image: url(../images/sport_sm.png);
+            background-position: 71% -42px;
+            padding: 0 86px;
+          }
+          .item-2 {
+            background-image: url(../images/health_sm.png);
+            background-position: 35% -70px;
+            padding: 11px 72px 0;
+          }
+          .item-3 {
+            background-image: url(../images/extreme_sm.png);
+            background-position: 49% -26px;
+            padding: 10px 43px 0;
+          }
+          .item-4 {
+            background-image: url(../images/games_sm.png);
+            background-position: 50% -28px;
+            @extend .d-flex-cntr;
+            padding-bottom: 20px;
+          }
+          .item-5 {
+            background-image: url(../images/education_sm.png);
+            padding: 24px 19px 0;
+          }
+          .item-6 {
+            background-image: url(../images/relax_sm.png);
+            background-position: 51% -44px;
+            padding: 25px 10px 0;
+          }
+          .item-7 {
+            background-image: url(../images/travelling_sm.png);
+            background-position: 51% -18px;
+            @extend .d-flex-cntr;
+            padding-bottom: 20px;
+          }
+          .item-1,
+          .item-2,
+          .item-3,
+          .item-4,
+          .item-5,
+          .item-6,
+          .item-7 {
+            width: 300px;
+            height: 120px;
+            border-radius: 4px;
+            box-shadow: inset 0 -120px 190px -41px #000000;
+            &__title {
+              padding: 22px 0 0 2px;
+              text-align: center;
+              @include font-style(Montserrat, normal, bold, 22px, 27px, $white);
+              letter-spacing: 0.5px;
+            }
+          }
+        }
+      }
+    }
+    // discover
+
+    // form
+    .form {
+      height: 200px;
+      &__box {
+        @extend .header__box;
+        min-width: 280px;
+        max-width: 600px;
+        @extend .d-flex-cntr;
+        flex-flow: column wrap;
+        &__title {
+          @extend .sect-title;
+          width: 280px;
+          letter-spacing: 0.6px;
+          text-align: center;
+        }
+        &__content {
+          height: 200px;
+          padding: 19px 0 0 5px;
+          display: flex;
+          flex-flow: column wrap;
+          align-items: center;
+          .sub-title {
+            @include font-style(Roboto, normal, 300, 18px, 14px, #666666);
+            text-align: center;
+          }
+          .search-field {
+            width: 280px;
+            height: 40px;
+            background-color: $white;
+            border: 1px solid #d4d4d4;
+            box-sizing: border-box;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+            border-radius: 3px;
+            margin: 15px 5px 0 0;
+            padding: 6px 0 0 13px;
+          }
+          .search-field::placeholder {
+            @include font-style(Roboto, normal, 300, 14px, 16px, $black);
+          }
+          .search-btn {
+            @include btn-size(280px, 40px, 40px, $red);
+            border: 0 solid $white;
+            margin: 9px 5px 0 0;
+            letter-spacing: 0.3px;
+            padding-left: 18px;
+            @include font-style(Montserrat, normal, bold, 14px, 17px, $white);
+            @extend .d-flex-cntr;
+          }
+          .search-btn:hover {
+            background-color: $white;
+            border: 2px solid $red;
+            color: $red;
+          }
+        }
+      }
+    }
+    // form
+    // MAIN
+
+    // FOOTER
+    .footer {
+      .red_line {
+        margin-top: 31px;
+        background-color: $red;
+      }
+      &__box {
+        width: 320px;
+        height: 204px;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        &__logo {
+          padding-top: 12px;
+          @include font-style(Montserrat, normal, normal, 16px, 20px, $red);
+          text-align: center;
+        }
+        &__company {
+          padding-top: 12px;
+          display: flex;
+          flex-flow: column wrap;
+          .title {
+            @include font-style(Montserrat, normal, bold, 14px, 17px, $black);
+            text-align: center;
+          }
+          .nav {
+            width: 189px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            .link {
+              @include font-style(Roboto, normal, 300, 14px, 26px, #999999);
+              text-align: center;
+              text-decoration: none;
+            }
+          }
+        }
+        &__partners {
+          .title {
+            padding-top: 7px;
+            margin-left: -2px;
+            letter-spacing: 0.2px;
+            @include font-style(Montserrat, normal, bold, 14px, 17px, $black);
+          }
+        }
+        &__designed-by {
+          padding-top: 14px;
+          .title {
+            @include font-style(Montserrat, normal, bold, 10px, 12px, #cccccc);
+            letter-spacing: 1.5px;
+            text-align: center;
+          }
+          .owns-by {
+            margin-top: 7px;
+            width: 110px;
+            height: 24px;
+          }
+        }
+      }
+    }
+    // FOOTER
+  }
+}

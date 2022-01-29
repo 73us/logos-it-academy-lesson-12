@@ -1,0 +1,40 @@
+// default mixins for all site \/ \/ \/
+@mixin font-style($ff, $stl, $w, $fs, $lh, $clr) {
+  font-family: $ff;
+  font-style: $stl;
+  font-weight: $w;
+  font-size: $fs;
+  line-height: $lh;
+  color: $clr;
+}
+@mixin btn-size($w, $h, $br, $bc) {
+  width: $w;
+  height: $h;
+  border-radius: $br;
+  background-color: $bc;
+}
+// default mixins for all site /\ /\ /\
+
+// this mixin uses in section m-persons \/ \/ \/
+@mixin ava-icon($url, $pos, $w, $h, $r, $t, $bg, $b-r, $o) {
+  content: $url;
+  position: $pos;
+  width: $w;
+  height: $h;
+  right: $r;
+  top: $t;
+  background-color: $bg;
+  border-radius: $b-r;
+  outline: $o;
+}
+// this mixin uses in section m-persons /\ /\ /\
+
+// this mixin uses in section discover \/ \/ \/
+@mixin item-img($url, $bg-pos-x, $bg-pos-y, $w, $h, $p-t, $p-r, $p-b, $p-l) {
+  background-image: $url;
+  background-position: $bg-pos-x $bg-pos-y;
+  width: $w;
+  height: $h;
+  padding: $p-t $p-r $p-b $p-l;
+}
+// this mixin uses in section discover /\ /\ /\

@@ -1,0 +1,578 @@
+@import "./base/mixins";
+@import "./base/variables";
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sect-title {
+    @include font-style(Montserrat, normal, bold, 22px, 27px, $black);
+  }
+  .d-flex-cntr {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  // HEADER
+  .header {
+    min-height: 700px;
+    background-image: url(../images/header-bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000000;
+    &__box {
+      margin: 0 auto;
+      min-width: 670px;
+      max-width: 850px;
+      &__up-part {
+        padding-top: 39px;
+        @extend .d-flex-cntr;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        &__logo {
+          padding-left: 48px;
+          .logo {
+            @include font-style(Montserrat, normal, bold, 20px, 24px, $white);
+            text-decoration: none;
+          }
+        }
+        &__btn-box {
+          padding-right: 48px;
+          display: flex;
+          button {
+            @include btn-size(90px, 36px, 40px, transparent);
+            box-sizing: border-box;
+            border: unset;
+          }
+          button:hover {
+            border: 2px solid $white;
+          }
+          .log-in {
+            padding-left: 10px;
+            @include font-style(Montserrat, normal, normal, 14px, 17px, $white);
+          }
+          .sign-up {
+            margin-right: 2px;
+            padding-left: 0;
+            @extend .log-in;
+          }
+        }
+      }
+      &__title-part {
+        padding-top: 148px;
+        @extend .d-flex-cntr;
+        flex-flow: column wrap;
+        &__title {
+          padding-right: 0;
+          width: 470px;
+          @include font-style(Montserrat, normal, bold, 52px, 63px, $white);
+          text-align: center;
+          letter-spacing: 0.8px;
+        }
+        &__sub-title {
+          padding-top: 29px;
+          width: 404px;
+          @include font-style(Roboto, normal, 300, 24px, 24px, #f7f3f2);
+          text-align: center;
+        }
+        &__btn {
+          margin-top: 34px;
+          @include btn-size(225px, 40px, 40px, $red);
+          @extend .d-flex-cntr;
+          a {
+            @include font-style(Montserrat, normal, bold, 14px, 17px, $white);
+            text-decoration: none;
+            word-spacing: 2px;
+          }
+        }
+        &__btn:hover {
+          background-color: $white;
+          border: 2px solid $red;
+        }
+        &__btn:hover a {
+          color: $red;
+        }
+      }
+    }
+  }
+  // HEADER
+
+  // MAIN
+  //  h-works
+  .h-works {
+    height: 560px;
+    &__box {
+      @extend .header__box;
+      min-width: 748px;
+      max-width: 950px;
+      padding-top: 94px;
+      @extend .d-flex-cntr;
+      flex-flow: column wrap;
+      &__title {
+        @extend .sect-title;
+        letter-spacing: 0.6px;
+      }
+      &__content {
+        width: 748px;
+        padding-top: 35px;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        .item-1 {
+          background-image: url(../images/h-works_i-1.png);
+          background-position: 42% -6px;
+        }
+        .item-2 {
+          background-image: url(../images/h-works_i-2.png);
+          background-position: 42.4% -12px;
+        }
+        .item-3 {
+          background-image: url(../images/h-works_i-3.png);
+          background-position: 41.5% -4px;
+        }
+        .item-1,
+        .item-2,
+        .item-3 {
+          width: 236px;
+          height: 400px;
+          padding: 27.3% 32px 17px 21px;
+          background-repeat: no-repeat;
+          @extend .d-flex-cntr;
+          flex-flow: column wrap;
+          align-items: start;
+          justify-content: space-between;
+          border-radius: 4px;
+          box-shadow: inset 0 -34px 122px 0px black;
+          &__badge {
+            @include btn-size(70px, 20px, 40px, $red);
+            @include font-style(Montserrat, normal, normal, 10px, 12px, $white);
+            letter-spacing: 2px;
+            @extend .d-flex-cntr;
+          }
+          div[title="step-2"] {
+            margin-top: 51px;
+          }
+          &__title {
+            padding: 22px 0 0 2px;
+            @include font-style(Montserrat, normal, bold, 24px, 14px, $white);
+          }
+          div[title="title-2"] {
+            margin: -30px 0 0 -2px;
+            letter-spacing: 0.7px;
+          }
+          &__desc {
+            @include font-style(Roboto, normal, 300, 14px, 14px, #e3e3e3);
+          }
+        }
+      }
+    }
+  }
+  //  h-works
+
+  // m-partner
+  .m-partner {
+    &__box {
+      @extend .header__box;
+      min-width: 748px;
+      max-width: 950px;
+      padding-top: 90px;
+      @extend .d-flex-cntr;
+      flex-flow: column wrap;
+      &__title {
+        letter-spacing: 0.6px;
+        @extend .sect-title;
+        text-align: center;
+      }
+      &__content {
+        height: 499px;
+        width: 515px;
+        padding: 35px 1px 0 0;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: center;
+        .item-1 {
+          position: relative;
+          padding-bottom: 17px;
+        }
+        .item-1::after {
+          @include ava-icon(
+            url("../images/music.svg"),
+            absolute,
+            32px,
+            32px,
+            58px,
+            89px,
+            #ff4e50,
+            50%,
+            6px solid $white
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-2 {
+          position: relative;
+        }
+        .item-2::after {
+          @include ava-icon(
+            url("../images/brush.svg"),
+            absolute,
+            32px,
+            32px,
+            58px,
+            89px,
+            #19d4ca,
+            50%,
+            6px solid $white
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-3 {
+          position: relative;
+        }
+        .item-3::after {
+          @include ava-icon(
+            url("../images/camera.svg"),
+            absolute,
+            32px,
+            32px,
+            58px,
+            89px,
+            #ffa710,
+            50%,
+            6px solid $white
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-4 {
+          position: relative;
+        }
+        .item-4::after {
+          @include ava-icon(
+            url("../images/plane.svg"),
+            absolute,
+            32px,
+            32px,
+            58px,
+            89px,
+            #667df3,
+            50%,
+            6px solid $white
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-1,
+        .item-2,
+        .item-3,
+        .item-4 {
+          width: 238px;
+          @extend .d-flex-cntr;
+          flex-flow: column wrap;
+          &__avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+          }
+          &__name {
+            padding-top: 19px;
+            @include font-style(Montserrat, normal, bold, 14px, 17px, $black);
+            letter-spacing: 0.5px;
+          }
+          &__desc {
+            padding-top: 21px;
+            @include font-style(Roboto, normal, 300, 14px, 14px, #666666);
+            text-align: center;
+          }
+          div[title="desc-3"] {
+            padding-top: 26px;
+          }
+        }
+      }
+      &__btn {
+        margin-top: 41px;
+        @include btn-size(180px, 40px, 40px, $white);
+        border: 2px solid #ff4e50;
+        @extend .d-flex-cntr;
+        a {
+          padding-left: 4px;
+          @include font-style(Montserrat, normal, bold, 14px, 17px, $red);
+          text-decoration: none;
+          letter-spacing: 0.3px;
+        }
+      }
+      &__btn:hover {
+        background-color: $red;
+        border: 2px solid $white;
+      }
+      &__btn:hover a {
+        color: $white;
+      }
+    }
+  }
+  // m-partner
+
+  // discover
+  .discover {
+    height: 1218px;
+    &__box {
+      @extend .header__box;
+      min-width: 748px;
+      max-width: 950px;
+      padding-top: 93px;
+      @extend .d-flex-cntr;
+      flex-flow: column wrap;
+      &__title {
+        width: 350px;
+        letter-spacing: 0.7px;
+        text-align: center;
+        @extend .sect-title;
+      }
+      &__content {
+        height: 1025px;
+        width: 749px;
+        padding: 35px 1px 0 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        .item-1 {
+          @include item-img(
+            url(../images/sport.png),
+            46%,
+            -4px,
+            236px,
+            310px,
+            0,
+            54px,
+            28px,
+            54px
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-2 {
+          @include item-img(
+            url(../images/health.png),
+            83%,
+            7px,
+            236px,
+            310px,
+            0,
+            41px,
+            0,
+            41px
+          );
+          background-repeat: no-repeat;
+          @extend .d-flex-cntr;
+        }
+        .item-3 {
+          @include item-img(
+            url(../images/extreme.png),
+            82%,
+            -7px,
+            236px,
+            310px,
+            0,
+            25px,
+            0,
+            25px
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-4 {
+          @include item-img(
+            url(../images/games.png),
+            36%,
+            -17px,
+            236px,
+            310px,
+            0,
+            0,
+            0,
+            0
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-5 {
+          @include item-img(
+            url(../images/education.png),
+            55%,
+            -40px,
+            492px,
+            310px,
+            0,
+            0,
+            0,
+            0
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-6 {
+          @include item-img(
+            url(../images/relax.png),
+            5%,
+            -56px,
+            492px,
+            310px,
+            0,
+            0,
+            0,
+            0
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-7 {
+          @include item-img(
+            url(../images/travelling.png),
+            11%,
+            -8px,
+            236px,
+            310px,
+            0,
+            0,
+            0,
+            0
+          );
+          @extend .d-flex-cntr;
+        }
+        .item-1,
+        .item-2,
+        .item-3,
+        .item-4,
+        .item-5,
+        .item-6,
+        .item-7 {
+          border-radius: 4px;
+          box-shadow: inset 0 -120px 190px -41px #000000;
+          &__title {
+            text-align: center;
+            @include font-style(Montserrat, normal, bold, 22px, 27px, $white);
+            letter-spacing: 0.5px;
+          }
+        }
+      }
+    }
+  }
+  // discover
+
+  // form
+  .form {
+    height: 200px;
+    &__box {
+      @extend .header__box;
+      min-width: 748px;
+      max-width: 950px;
+      @extend .d-flex-cntr;
+      flex-flow: column wrap;
+      &__title {
+        @extend .sect-title;
+        width: 310px;
+        letter-spacing: 0.7px;
+        text-align: center;
+        padding-left: 1px;
+      }
+      &__content {
+        width: 485px;
+        height: 200px;
+        padding: 54px 0 0 4px;
+        display: flex;
+        flex-flow: column wrap;
+        .sub-title {
+          margin: 0 auto;
+          @include font-style(Roboto, normal, 300, 18px, 14px, #666666);
+          text-align: center;
+          letter-spacing: -0.1px;
+        }
+        .btn-group {
+          padding-top: 25px;
+          display: flex;
+          .search-field {
+            margin-left: -2px;
+            width: 299px;
+            height: 40px;
+            background-color: $white;
+            border: 1px solid #d4d4d4;
+            box-sizing: border-box;
+            box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+            border-radius: 3px;
+            padding: 6px 0 0 13px;
+          }
+          .search-field::placeholder {
+            @include font-style(Roboto, normal, 300, 14px, 16px, $black);
+          }
+          .search-btn {
+            @include btn-size(172.12px, 40px, 40px, $red);
+            border: 0 solid $white;
+            margin-left: 9px;
+            padding-left: 11px;
+            letter-spacing: 0.3px;
+            @include font-style(Montserrat, normal, bold, 14px, 17px, $white);
+            @extend .d-flex-cntr;
+          }
+          .search-btn:hover {
+            background-color: $white;
+            border: 2px solid $red;
+            color: $red;
+          }
+        }
+      }
+    }
+  }
+  // form
+  // MAIN
+
+  // FOOTER
+  .footer {
+    .red_line {
+      margin-top: 60.2px;
+      background-color: $red;
+    }
+    &__box {
+      width: 768px;
+      height: 204px;
+      margin: 0 auto;
+      display: flex;
+      flex-flow: row wrap;
+      &__logo {
+        padding: 29px 0 0 39px;
+        @include font-style(Montserrat, normal, normal, 16px, 20px, $red);
+        text-align: center;
+      }
+      &__company {
+        padding: 30px 0 0 109px;
+        display: flex;
+        flex-flow: column wrap;
+        .title {
+          @include font-style(Montserrat, normal, bold, 14px, 17px, $black);
+        }
+        .nav {
+          padding-top: 11px;
+          width: 135px;
+          display: flex;
+          flex-flow: column wrap;
+          justify-content: space-around;
+          .link {
+            @include font-style(Roboto, normal, 300, 14px, 26px, #999999);
+            text-decoration: none;
+          }
+        }
+      }
+      &__partners {
+        padding: 30px 0 0 34px;
+        .title {
+          letter-spacing: 0.2px;
+          @include font-style(Montserrat, normal, bold, 14px, 17px, $black);
+        }
+      }
+      &__designed-by {
+        padding: 30px 0 0 121px;
+        .title {
+          @include font-style(Montserrat, normal, bold, 10px, 12px, #cccccc);
+          letter-spacing: 1.5px;
+          text-align: end;
+        }
+        .owns-by {
+          margin-top: 7px;
+          width: 110px;
+          height: 24px;
+        }
+      }
+    }
+  }
+  // FOOTER
+}
