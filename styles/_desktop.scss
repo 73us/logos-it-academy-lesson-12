@@ -1,0 +1,666 @@
+@media screen and (min-width: 1460px) {
+  body {
+    font-family: $main-font-family;
+  }
+  %d-flex-center-desktop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  // HEADER
+  .header {
+    min-width: 1440px;
+    height: 700px;
+    background: url(../images/bg_image_desktop.png) center no-repeat;
+    background-size: cover;
+    @extend %d-flex-center-desktop;
+    flex-flow: column wrap;
+    justify-content: start;
+    padding-top: 40px;
+    // Header upper-section
+    &__upper-section {
+      width: 942px;
+      height: 36px;
+      @extend %d-flex-center-desktop;
+      flex-flow: row-reverse wrap;
+      justify-content: space-between;
+      margin-bottom: 70px;
+      padding-right: 42px;
+      &__btn-box {
+        @extend %d-flex-center-desktop;
+        justify-content: start;
+        &__login,
+        &__sign-up {
+          @include fontStyle(
+            $main-font-family,
+            normal,
+            400,
+            14px,
+            17px,
+            $main-font-color-white
+          );
+          background-color: transparent;
+          width: 90px;
+          height: 36px;
+          border: 0;
+          border-radius: 40px;
+          cursor: pointer;
+        }
+        &__login:hover,
+        &__sign-up:hover {
+          border: 2px solid $main-font-color-white;
+        }
+        &__login {
+          margin-left: -22px;
+        }
+        &__sign-up {
+          margin-left: -4px;
+        }
+      }
+      &__logo {
+        display: block;
+        @include fontStyle(
+          $main-font-family,
+          normal,
+          700,
+          20px,
+          24px,
+          $main-font-color-white
+        );
+        text-decoration: none;
+      }
+    }
+    // Header upper-section
+
+    // Header bottom-section
+    &__bottom-section {
+      width: 470px;
+      height: 254px;
+      @extend %d-flex-center-desktop;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      margin-top: 77px;
+      &__title {
+        @include fontStyle(
+          $main-font-family,
+          normal,
+          700,
+          52px,
+          63px,
+          $main-font-color-white
+        );
+        text-align: center;
+      }
+      &__sub-title {
+        @include fontStyle(
+          $second-font-family,
+          normal,
+          300,
+          24px,
+          24px,
+          #f7f3f2
+        );
+        text-align: center;
+        margin: 5px 0 15px;
+      }
+      &__btn {
+        @include btnDefStyle(
+          225px,
+          40px,
+          $main-font-color-red,
+          40px,
+          center,
+          0,
+          0,
+          default
+        );
+        @include fontStyle(
+          $main-font-family,
+          normal,
+          700,
+          14px,
+          17px,
+          $main-font-color-white
+        );
+      }
+      &__btn:hover {
+        @include btnHover(
+          $main-font-color-white,
+          2px solid $main-font-color-red,
+          $main-font-color-red
+        );
+        cursor: pointer;
+      }
+    }
+    // Header bottom-section
+  }
+  // HEADER
+
+  // MAIN
+  main {
+    min-width: 1440px;
+    .section__title {
+      @include fontStyle(
+        $main-font-family,
+        normal,
+        700,
+        26px,
+        32px,
+        $main-font-color-black
+      );
+      text-align: center;
+    }
+    // Works
+    .works {
+      padding-top: 89px;
+      &__content-box {
+        height: 400px;
+        width: 961px;
+        margin: 35px auto 0;
+        padding-right: 1px;
+        @extend %d-flex-center-desktop;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        &__card {
+          width: 300px;
+          height: 400px;
+          @extend %d-flex-center-desktop;
+          flex-flow: column wrap;
+          align-items: start;
+          justify-content: space-between;
+          padding: 221px 34px 21px 26px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          border-radius: 4px;
+          &__badge {
+            width: 70px;
+            height: 20px;
+            background-color: #ff4e50;
+            border-radius: 40px;
+            @include fontStyle(
+              $main-font-family,
+              normal,
+              400,
+              10px,
+              12px,
+              $main-font-color-white
+            );
+            letter-spacing: 2px;
+            @extend %d-flex-center-desktop;
+          }
+          &__title {
+            @include fontStyle(
+              $main-font-family,
+              normal,
+              700,
+              24px,
+              26px,
+              $main-font-color-white
+            );
+            margin-top: -2px;
+          }
+          &__desc {
+            @include fontStyle(
+              $second-font-family,
+              normal,
+              300,
+              14px,
+              14px,
+              $main-font-color-sub-white
+            );
+          }
+        }
+        &__card:nth-child(1) {
+          background-image: url(../images/works_1_bigger.png);
+          background-position: 0;
+        }
+        &__card:nth-child(2) {
+          background-image: url(../images/works_2.png);
+          padding-top: 250px;
+          background-position: 55%;
+        }
+        .works__content-box__card:nth-child(2)
+          > .works__content-box__card__title {
+          margin-top: 6px;
+        }
+        &__card:nth-child(3) {
+          background-image: url(../images/works_3.png);
+          background-position: 55%;
+        }
+      }
+    }
+    // Works
+
+    // Partner
+    .partner {
+      padding-top: 90px;
+      width: 941px;
+      margin: 0 auto;
+      &__content-box {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        padding-top: 35px;
+        height: 254px;
+        &__item {
+          position: relative;
+          @extend %d-flex-center-desktop;
+          justify-content: start;
+          flex-flow: column wrap;
+          width: 221px;
+          height: 205px;
+          &__photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            position: relative;
+          }
+          &__name {
+            @include fontStyle(
+              $main-font-family,
+              normal,
+              700,
+              14px,
+              17px,
+              $main-font-color-black
+            );
+            margin: 18px 0 22px;
+          }
+          &__desc {
+            @include fontStyle(
+              $second-font-family,
+              normal,
+              300,
+              14px,
+              14px,
+              $main-font-color-sub-black
+            );
+            text-align: center;
+          }
+        }
+        &__item:nth-child(2) {
+          margin-left: 10px;
+          .partner__content-box__item__desc {
+            margin-top: -2px;
+            letter-spacing: 0.2px;
+          }
+        }
+        &__item:nth-child(3) {
+          margin-left: 8px;
+          height: 224px;
+          .partner__content-box__item__name {
+            margin-bottom: 27px;
+          }
+        }
+        &__item:nth-child(4) {
+          margin-left: 8px;
+          height: 224px;
+          .partner__content-box__item__name {
+            margin-bottom: 27px;
+          }
+        }
+        &__item::after {
+          width: 32px;
+          height: 32px;
+          position: absolute;
+          left: 140px;
+          top: 88px;
+          @extend %d-flex-center-desktop;
+          border-radius: 50%;
+          outline: 4px solid white;
+          padding-top: 3px;
+        }
+        &__item:nth-child(1)::after {
+          content: url(../images/bradley_icon.svg);
+          background-color: $main-font-color-red;
+        }
+        &__item:nth-child(2)::after {
+          content: url(../images/marie_icon.svg);
+          background-color: #ffa710;
+          padding-top: 0;
+          left: 138px;
+          top: 87px;
+        }
+        &__item:nth-child(3)::after {
+          content: url(../images/diana_icon.svg);
+          background-color: #19d4ca;
+        }
+        &__item:nth-child(4)::after {
+          content: url(../images/christopher_icon.svg);
+          background-color: #667df3;
+        }
+      }
+      &__btn {
+        @include btnDefStyle(
+          180px,
+          40px,
+          $main-font-color-white,
+          40px,
+          center,
+          2px solid $main-font-color-red,
+          1px 0 0 5px,
+          default
+        );
+        @include fontStyle(
+          $main-font-family,
+          normal,
+          700,
+          14px,
+          17px,
+          $main-font-color-red
+        );
+        margin: 40px 0 0 40.6%;
+      }
+      &__btn:hover {
+        @include btnHover($main-font-color-red, 0, $main-font-color-white);
+        cursor: pointer;
+      }
+    }
+    // Partner
+
+    // Discover
+    .discover {
+      padding-top: 90px;
+      &__title {
+        width: 413px;
+        margin: 0 auto;
+      }
+      &__content-box {
+        width: 962px;
+        margin: 0 auto;
+        padding-top: 35px;
+        height: 1005px;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        &__row {
+          @extend %d-flex-center-desktop;
+          flex-flow: column wrap;
+          justify-content: space-between;
+          height: 310px;
+          &__item {
+            width: 300px;
+            height: 310px;
+            border-radius: 4px;
+            @extend %d-flex-center-desktop;
+            position: relative;
+            &__title {
+              @include fontStyle(
+                $main-font-family,
+                normal,
+                700,
+                22px,
+                27px,
+                $main-font-color-white
+              );
+              text-align: center;
+              z-index: 1;
+            }
+          }
+          &__item::after {
+            content: "";
+            background-color: black;
+            opacity: 0.2;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+          }
+        }
+        // Discover row 1
+        &__row:nth-child(1) {
+          .discover__content-box__row__item:nth-child(1) {
+            background-image: url(../images/row_1-photo_1.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 63%;
+            .discover__content-box__row__item__title {
+              margin-top: 0;
+              width: 209px;
+            }
+          }
+          .discover__content-box__row__item:nth-child(2) {
+            background-image: url(../images/row_1-photo_2.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 63%;
+            .discover__content-box__row__item__title {
+              width: 238px;
+            }
+          }
+          .discover__content-box__row__item:nth-child(3) {
+            background-image: url(../images/row_1-photo_3.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 33%;
+            .discover__content-box__row__item__title {
+              width: 187px;
+            }
+          }
+        }
+        // Discover row 2
+        &__row:nth-child(2) {
+          .discover__content-box__row__item:nth-child(1) {
+            background-image: url(../images/row_2-photo_1.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 48%;
+          }
+          .discover__content-box__row__item:nth-child(2) {
+            width: 620px;
+            background-image: url(../images/row_2-photo_2.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 56%;
+          }
+        }
+        // Discover row 3
+        &__row:nth-child(3) {
+          .discover__content-box__row__item:nth-child(1) {
+            width: 620px;
+            background-image: url(../images/row_3-photo_1.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+          .discover__content-box__row__item:nth-child(2) {
+            background-image: url(../images/row_3-photo_2.png);
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+    // Discover
+
+    // Search
+    .search {
+      padding-top: 88px;
+      height: 253px;
+      @extend %d-flex-center-desktop;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      align-items: center;
+      &__title {
+        width: 100%;
+        margin: 0 auto 0;
+      }
+      &__sub-title {
+        @include fontStyle(
+          $second-font-family,
+          normal,
+          300,
+          18px,
+          14px,
+          $main-font-color-sub-black
+        );
+        text-align: center;
+        letter-spacing: -0.1px;
+        margin-top: 53px;
+        width: 100%;
+      }
+      &__input-box {
+        width: 480px;
+        @extend %d-flex-center-desktop;
+        flex-direction: row;
+        height: 90px;
+        justify-content: space-between;
+        &__input {
+          width: 299px;
+          height: 40px;
+          background: #ffffff;
+          border: 1px solid #d4d4d4;
+          box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.073313);
+          border-radius: 3px;
+          padding: 5px 0 0 13px;
+        }
+        &__input:focus {
+          outline: 1px solid red;
+        }
+        &__input::placeholder {
+          @include fontStyle(
+            $second-font-family,
+            normal,
+            300,
+            14px,
+            16px,
+            #999999
+          );
+        }
+        &__btn {
+          @include btnDefStyle(
+            172.12px,
+            40px,
+            $main-font-color-red,
+            40px,
+            center,
+            0,
+            3px 0 0 2px,
+            default
+          );
+          @include fontStyle(
+            $main-font-family,
+            normal,
+            700,
+            14px,
+            17px,
+            $main-font-color-white
+          );
+        }
+        &__btn:hover {
+          @include btnHover(
+            $main-font-color-white,
+            2px solid $main-font-color-red,
+            $main-font-color-red
+          );
+          cursor: pointer;
+        }
+      }
+    }
+    // Search
+  }
+  // MAIN
+
+  // FOOTER
+  .footer {
+    margin-top: 99px;
+    height: 259px;
+    border-top: 3px solid $main-font-color-red;
+    padding-top: 38px;
+    &__block {
+      width: 1440px;
+      display: flex;
+      align-items: start;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      padding: 0 249px 0;
+      margin: 0 auto;
+      &__logo {
+        @include fontStyle(
+          $main-font-family,
+          normal,
+          400,
+          16px,
+          20px,
+          $main-font-color-red
+        );
+        text-decoration: none;
+      }
+      &__menu-box {
+        margin-left: -17px;
+        &__title {
+          @include fontStyle(
+            $main-font-family,
+            normal,
+            700,
+            14px,
+            17px,
+            $main-font-color-black
+          );
+          text-align: start;
+          padding-left: 24px;
+        }
+        &__menu {
+          width: 146px;
+          height: 179px;
+          @extend %d-flex-center-desktop;
+          flex-flow: column wrap;
+          align-items: start;
+          padding-left: 16px;
+          &__item {
+            margin: 0 7px 0;
+            &__link {
+              @include fontStyle(
+                $second-font-family,
+                normal,
+                300,
+                14px,
+                26px,
+                #999999
+              );
+              text-decoration: none;
+            }
+            &__link:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      &__patners {
+        margin-right: 37px;
+        width: 200px;
+        &__title {
+          @include fontStyle(
+            $main-font-family,
+            normal,
+            700,
+            14px,
+            17px,
+            $main-font-color-black
+          );
+        }
+      }
+      &__designed-by {
+        &__title {
+          @include fontStyle(
+            $main-font-family,
+            normal,
+            700,
+            10px,
+            12px,
+            #cccccc
+          );
+          letter-spacing: 1px;
+          text-align: end;
+          margin-bottom: 6px;
+        }
+        &__photo {
+          width: 110px;
+          height: 24px;
+          padding-right: 3px;
+        }
+      }
+    }
+  }
+  // FOOTER
+}

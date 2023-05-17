@@ -1,0 +1,25 @@
+@mixin btnDefStyle($w, $h, $bg-clr, $bd-rd, $tx-c, $bd, $p, $crsr) {
+  width: $w;
+  height: $h;
+  background: $bg-clr;
+  border-radius: $bd-rd;
+  text-align: $tx-c;
+  border: $bd;
+  padding: $p;
+  cursor: $crsr;
+}
+
+@mixin btnHover($bg-clr, $bd, $clr) {
+  background-color: $bg-clr;
+  border: $bd;
+  color: $clr;
+}
+
+@mixin fontStyle($ff, $fstl, $fw, $fs, $lh, $clr) {
+  font-family: $ff;
+  font-style: $fstl;
+  font-weight: $fw;
+  font-size: $fs;
+  line-height: $lh;
+  color: $clr;
+}
